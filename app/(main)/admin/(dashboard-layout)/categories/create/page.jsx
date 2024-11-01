@@ -28,16 +28,28 @@ export default function CategoriesCreatePage() {
   //? Handlers
   const createHandler = data => {
     const { name, slug, image, colors } = data
-    createCtegory({
-      body: {
-        name,
-        parent: parentId || '',
-        slug: slug.trim().split(' ').join('-'),
-        image,
-        colors,
-        level: parentCategory ? parentCategory?.level + 1 : 0,
-      },
-    })
+    if (parentId) {
+      createCtegory({
+        body: {
+          name,
+          parent: parentId,
+          slug: slug.trim().split(' ').join('-'),
+          image,
+          colors,
+          level: parentCategory ? parentCategory?.level + 1 : 0,
+        },
+      })
+    } else {
+      createCtegory({
+        body: {
+          name,
+          slug: slug.trim().split(' ').join('-'),
+          image,
+          colors,
+          level: parentCategory ? parentCategory?.level + 1 : 0,
+        },
+      })
+    }
   }
 
   const onSuccess = () => {

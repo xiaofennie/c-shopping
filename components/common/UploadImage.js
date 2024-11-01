@@ -42,19 +42,19 @@ const UploadImage = props => {
       return
     }
 
-    const credentials = await getUploadToken().unwrap()
+    // const credentials = await getUploadToken().unwrap()
 
-    const { AccessKeyId, AccessKeySecret, SecurityToken } = credentials.data
+    // const { AccessKeyId, AccessKeySecret, SecurityToken } = credentials.data
     const ossClient = new OSS({
-      accessKeyId: AccessKeyId,
-      accessKeySecret: AccessKeySecret,
-      stsToken: SecurityToken,
+      accessKeyId: process.env.NEXT_PUBLIC_ALI_ACCESS_KEY,
+      accessKeySecret: process.env.NEXT_PUBLIC_ALI_SECRET_KEY,
       bucket: process.env.NEXT_PUBLIC_ALI_BUCKET_NAME,
       region: process.env.NEXT_PUBLIC_ALI_REGION,
     })
 
     const filePath = `${process.env.NEXT_PUBLIC_ALI_FILES_PATH}${folder || '/others'}/`
     const fileName = `${nanoid()}.${getFilenameExt(file.name)}`
+    console.log(`${filePath}${fileName}`, file)
 
     ossClient
       .put(`${filePath}${fileName}`, file)

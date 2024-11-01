@@ -18,6 +18,7 @@ const CategorySchema = new mongoose.Schema(
     parent: {
       type: mongoose.Types.ObjectId,
       ref: 'category',
+      default: null,
     },
     image: {
       type: String,
@@ -29,6 +30,13 @@ const CategorySchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
+// CategorySchema.pre('save', function (next) {
+//   console.log(2345)
+//   if (this.parent === '') {
+//     this.parent = null // 将空字符串转换为 null
+//   }
+//   next()
+// })
 CategorySchema.plugin(basePlugin)
 CategorySchema.post(/^find/, function (docs) {
   if (this.op === 'find') {
@@ -39,7 +47,7 @@ CategorySchema.post(/^find/, function (docs) {
   }
   if (this.op === 'findOne' && docs) {
     docs._id = docs._id.toString()
-    docs.parent = docs.parent ? docs.parent.toString() : docs.parent
+    // docs.parent = docs.parent ? docs.parent.toString() : docs.parent
   }
 })
 
