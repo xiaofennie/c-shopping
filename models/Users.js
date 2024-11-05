@@ -17,35 +17,40 @@ const UserSchema = new mongoose.Schema(
           type: String,
         },
         area: {
-          code: {
-            type: String,
-          },
-          name: {
-            type: String,
-          },
-          cityCode: {
-            type: String,
-          },
-          provinceCode: {
-            type: String,
-          },
+          type: String,
+          // code: {
+          //   type: String,
+          // },
+          // name: {
+          //   type: String,
+          // },
+          // cityCode: {
+          //   type: String,
+          // },
+          // provinceCode: {
+          //   type: String,
+          // },
         },
         city: {
-          code: {
-            type: String,
-          },
-          name: {
-            type: String,
-          },
-          provinceCode: {
-            type: String,
-          },
+          type: String,
+          // code: {
+          //   type: String,
+          // },
+          // name: {
+          //   type: String,
+          // },
+          // provinceCode: {
+          //   type: String,
+          // },
         },
         province: {
-          code: {
+          id: {
             type: String,
           },
           name: {
+            type: String,
+          },
+          state_code: {
             type: String,
           },
         },

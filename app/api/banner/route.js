@@ -28,7 +28,7 @@ const create = apiHandler(
     const body = await req.json()
     await bannerRepo.create(body)
     return setJson({
-      message: '新增成功',
+      message: 'Add successfully! ',
     })
   },
   {

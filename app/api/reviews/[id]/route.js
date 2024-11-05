@@ -42,7 +42,7 @@ const update = apiHandler(
     }
 
     return setJson({
-      message: '更新成功',
+      message: 'Update successfully!',
     })
   },
   {
@@ -59,7 +59,7 @@ const _delete = apiHandler(
     const { id } = params
     await reviewRepo.delete(id)
     return setJson({
-      message: '删除成功',
+      message: 'Delete successfully!',
     })
   },
   {

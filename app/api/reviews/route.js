@@ -36,7 +36,7 @@ const create = apiHandler(
     const body = await req.json()
     await reviewRepo.create(userId, body)
     return setJson({
-      message: '新增成功',
+      message: 'Add successfully! ',
     })
   },
   {

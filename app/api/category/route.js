@@ -40,7 +40,7 @@ const createCategory = apiHandler(
     await categoryRepo.create(body)
 
     return setJson({
-      message: '创建分类成功',
+      message: 'Create successfully!',
     })
   },
   {

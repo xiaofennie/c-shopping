@@ -11,7 +11,7 @@ const updateRole = apiHandler(
     await usersRepo.update(id, body)
 
     return setJson({
-      message: '更新成功',
+      message: 'Update successfully!',
     })
   },
   {
@@ -28,7 +28,7 @@ const deleteUser = apiHandler(
     const { id } = params
     await usersRepo.delete(id)
     return setJson({
-      message: '用户信息已经删除',
+      message: 'Delete successfully!',
     })
   },
   {

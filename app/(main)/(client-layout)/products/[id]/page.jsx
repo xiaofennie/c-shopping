@@ -84,18 +84,18 @@ const SingleProduct = async ({ params }) => {
 
           <Info infos={product?.info} />
 
-          <FreeShipping />
+          {/* <FreeShipping /> */}
         </div>
-        <div className="lg:col-span-2">
+        {/* <div className="lg:col-span-2">
           {product.inStock > 0 && <AddToCart product={product} />}
-        </div>
+        </div> */}
       </div>
 
-      <Services />
+      {/* <Services /> */}
 
       {product.description.length > 0 && <Description description={product.description} />}
 
-      <SmilarProductsSlider smilarProducts={smilarProducts} />
+      {/* <SmilarProductsSlider smilarProducts={smilarProducts} /> */}
 
       <div className="section-divide-y" />
 
@@ -105,16 +105,16 @@ const SingleProduct = async ({ params }) => {
 
           <div className="section-divide-y" />
 
-          <Reviews
+          {/* <Reviews
             numReviews={product.numReviews}
             prdouctID={product._id}
             productTitle={product.title}
-          />
+          /> */}
         </div>
 
-        <div className="hidden w-full px-3 lg:block lg:max-w-xs xl:max-w-sm">
+        {/* <div className="hidden w-full px-3 lg:block lg:max-w-xs xl:max-w-sm">
           {product.inStock > 0 && <AddToCart product={product} second />}
-        </div>
+        </div> */}
       </div>
     </main>
   )

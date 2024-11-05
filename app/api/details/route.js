@@ -21,7 +21,7 @@ const createDetails = apiHandler(
     const body = await req.json()
     await detailsRepo.create(body)
     return setJson({
-      message: '新增商品成功',
+      message: 'Add successfully!',
     })
   },
   {

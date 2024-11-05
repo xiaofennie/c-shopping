@@ -15,7 +15,7 @@ const updateOrder = apiHandler(
     const body = await req.json()
     await orderRepo.update(id, body)
     return setJson({
-      message: '已经通过确认',
+      message: 'Update successfully!',
     })
   },
   {

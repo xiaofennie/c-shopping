@@ -14,7 +14,7 @@ export default function CategoriesPage() {
   const { childCategories, isLoading } = useGetCategoriesQuery(undefined, {
     selectFromResult: ({ data, isLoading }) => {
       return {
-        childCategories: data?.data?.categories?.filter(category => category.parent === parentId),
+        childCategories: data?.data?.categories?.filter(category => category.parent == parentId),
         isLoading,
       }
     },

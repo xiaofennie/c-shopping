@@ -17,7 +17,7 @@ const updateDetails = apiHandler(
     const body = await req.json()
     await detailsRepo.update(id, body)
     return setJson({
-      message: '商品更新成功',
+      message: 'Update successfully!',
     })
   },
   {
@@ -37,7 +37,7 @@ const deleteDetails = apiHandler(
     const { id } = params
     await detailsRepo.delete(id)
     return setJson({
-      message: '商品已成功删除',
+      message: 'Delete successfully!',
     })
   },
   {

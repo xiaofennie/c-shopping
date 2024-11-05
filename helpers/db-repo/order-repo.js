@@ -29,7 +29,7 @@ const getAll = async ({ page, page_size }, filter) => {
 
 const getById = async id => {
   await db.connect()
-  const result = await Order.findById(id)
+  const result = await Order.findById(id).populate('user', '-password')
   if (!result) throw '订单不存在'
   await db.disconnect()
   return result

@@ -68,7 +68,10 @@ export default function LoginPage() {
       <main className="grid items-center min-h-screen">
         <section className="container max-w-md px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
           <Link passHref href="/">
-            <Logo className="mx-auto w-48 h-24" />
+            {/* <Logo className="mx-auto w-48 h-24" /> */}
+            <div className="text-center">
+              <span className="text-yellow-700 text-4xl font-bold">floor</span>
+            </div>
           </Link>
           <h1>
             <font className="">
@@ -78,7 +81,7 @@ export default function LoginPage() {
           <LoginForm isLoading={isLoading} onSubmit={submitHander} />
         </section>
 
-        <div className="fixed max-w-xs px-2 py-3 bg-white border rounded-lg shadow-lg top-5 right-5">
+        {/* <div className="fixed max-w-xs px-2 py-3 bg-white border rounded-lg shadow-lg top-5 right-5">
           <h5 className="mb-2 text-amber-600">
             您可以使用下面的电子邮件地址和密码来查看管理仪表板。
           </h5>
@@ -87,7 +90,7 @@ export default function LoginPage() {
             <br />
             <span className="text-sm text-zinc-500">Password: 123456</span>
           </div>
-        </div>
+        </div> */}
       </main>
     </>
   )

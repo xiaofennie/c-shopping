@@ -8,7 +8,7 @@ const deleteCategory = apiHandler(
     const { id } = params
     await categoryRepo.delete(id)
     return setJson({
-      message: '删除成功',
+      message: 'Delete successfully!',
     })
   },
   {
@@ -23,7 +23,7 @@ const updateCategory = apiHandler(
     const body = await req.json()
     await categoryRepo.update(id, body)
     return setJson({
-      message: '更新成功',
+      message: 'Update successfully!',
     })
   },
   {

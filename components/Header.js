@@ -22,7 +22,7 @@ export default function Header() {
         </div>
         <div className="container py-2 flex justify-between mx-auto relative">
           <Navbar />
-          <AddressBar />
+          {/* <AddressBar /> */}
         </div>
       </header>
     </>

@@ -11,7 +11,7 @@ const resetPassword = apiHandler(
     await usersRepo.resetPassword(userId, password)
 
     return setJson({
-      message: '密码更新成功',
+      message: 'Update successfully!',
     })
   },
   {
