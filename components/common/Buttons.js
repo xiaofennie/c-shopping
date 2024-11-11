@@ -26,7 +26,7 @@ export const Button = props => {
 }
 
 export const LoginBtn = ({ children, ...restPropps }) => (
-  <Button type="submit" className="mx-auto rounded-3xl w-44" {...restPropps}>
+  <Button type="submit" className="mx-auto rounded-3xl w-44 bg-primary" {...restPropps}>
     {children}
   </Button>
 )

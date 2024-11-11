@@ -1,5 +1,5 @@
 export const metadata = {
-  title: '注册',
+  title: 'Register',
 }
 
 export default function LoginLayout({ children }) {

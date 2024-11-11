@@ -52,7 +52,7 @@ export default function Sidebar() {
 
         <div className="overflow-y-auto absolute py-4 top-0 right-0 z-20 w-3/4 h-screen max-w-sm space-y-4 bg-white">
           <LogoH className="h-10 ml-3 w-28" />
-          <h5 className="p-3 border-t-2  border-gray-200">商品分类</h5>
+          <h5 className="p-3 border-t-2  border-gray-200">Categories</h5>
           {isLoading ? (
             <SidebarSkeleton />
           ) : categoriesList ? (
@@ -65,7 +65,7 @@ export default function Sidebar() {
                         <Disclosure.Button className="flex items-center justify-between px-4 py-2 w-full !mt-0">
                           <span
                             className={`pl-3 font-semibold tracking-wide ${
-                              open ? 'text-red-400' : 'text-gray-600'
+                              open ? 'text-primary' : 'text-gray-600'
                             }`}
                           >
                             {category.name}
@@ -73,7 +73,7 @@ export default function Sidebar() {
 
                           <Icons.ArrowDown
                             className={` ${
-                              open ? 'rotate-180 transform text-red-400 ' : 'text-gray-700'
+                              open ? 'rotate-180 transform text-primary ' : 'text-gray-700'
                             } w-7 h-7 bg-gray-50 rounded-2xl`}
                           />
                         </Disclosure.Button>
@@ -83,7 +83,7 @@ export default function Sidebar() {
                             className="py-2 text-gray-500 inline-flex items-center text-sm max-w-max pl-7"
                             onClick={handleClose}
                           >
-                            此类别所有分类
+                            All Products in this Category
                             <Icons.ArrowRight2 className="text-gray-500 icon" />
                           </Link>
                           {category?.children &&
@@ -94,7 +94,7 @@ export default function Sidebar() {
                                     <Disclosure.Button className="flex items-center justify-between px-4 py-2 w-full !mt-0 pl-7">
                                       <span
                                         className={`font-medium text-md ${
-                                          open ? 'text-red-400' : 'text-gray-600'
+                                          open ? 'text-primary' : 'text-gray-600'
                                         }`}
                                       >
                                         {category.name}
@@ -102,7 +102,7 @@ export default function Sidebar() {
                                       <Icons.ArrowDown
                                         className={` ${
                                           open
-                                            ? 'rotate-180 transform text-red-400 '
+                                            ? 'rotate-180 transform text-primary '
                                             : 'text-gray-700'
                                         } w-7 h-7 bg-gray-50 rounded-2xl`}
                                       />
@@ -117,7 +117,7 @@ export default function Sidebar() {
                                         className="py-2 text-gray-500 inline-flex items-center text-sm max-w-max pl-9"
                                         onClick={handleClose}
                                       >
-                                        此类别所有分类
+                                        All Products in this Category
                                         <Icons.ArrowRight2 className="text-gray-500 icon" />
                                       </Link>
                                       {category.children &&

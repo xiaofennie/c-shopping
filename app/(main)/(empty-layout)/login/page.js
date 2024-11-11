@@ -45,21 +45,20 @@ export default function LoginPage() {
       <main className="grid items-center min-h-screen">
         <section className="container max-w-md px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
           <Link passHref href="/">
-            {/* <Logo className="mx-auto w-48 h-24" /> */}
-            <div className="text-center">
-              <span className="text-yellow-700 text-4xl font-bold">floor</span>
+            <div className="w-full flex justify-center">
+              <Logo />
             </div>
           </Link>
           <h1>
             <font className="">
-              <font>登录</font>
+              <font>Login in</font>
             </font>
           </h1>
           <LoginForm isLoading={isLoading} onSubmit={submitHander} />
           <div className="text-xs">
-            <p className="inline mr-2 text-gray-800 text-xs">我还没有账户</p>
+            <p className="inline mr-2 text-gray-800 text-xs">New to Kirin?</p>
             <Link href="/register" className="text-blue-400 text-xs">
-              去注册
+              Sign up
             </Link>
           </div>
         </section>

@@ -42,7 +42,7 @@ export default function Navbar() {
         onMouseLeave={() => setHover(false)}
       >
         <Icons.Bars className="icon" />
-        商品分类
+        All Categories
       </button>
       <div
         className={`fixed left-0 z-20 w-full h-screen top-28 bg-gray-400/50 ${
@@ -98,7 +98,7 @@ export default function Navbar() {
                         <li key={levelTwoCategory._id} className="h-fit">
                           <Link
                             href={`/products?category=${levelTwoCategory.slug}`}
-                            className="flex-center px-2 mb-1 text-sm font-semibold tracking-wider text-gray-700 border-l-2 border-red-500"
+                            className="flex-center px-2 mb-1 text-sm font-semibold tracking-wider text-gray-700 border-l-2 border-primary"
                           >
                             {levelTwoCategory.name}
                             <Icons.ArrowRight2 className="icon" />

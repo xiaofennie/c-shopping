@@ -17,7 +17,7 @@ const BasicAddressBar = ({ addressModalProps }) => {
         className="flex items-center w-full gap-x-1 lg:w-fit"
       >
         <Icons.Location2 className="icon" />
-        <span>请选择您所在的城市</span>
+        <span>Enter your address</span>
 
         <Icons.ArrowRight2 className="mr-auto icon" />
       </button>
@@ -31,7 +31,7 @@ const BasicAddressBar = ({ addressModalProps }) => {
       >
         <Icons.Location2 className="icon" />
         <span>
-          发送{address?.province.name}, {address?.city.name}, {address?.area.name}
+          Send to {address?.province.name}, {address?.city.name}, {address?.area.name}
         </span>
         <Icons.ArrowRight2 className="mr-auto icon" />
       </button>

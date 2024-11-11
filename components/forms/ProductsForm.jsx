@@ -273,7 +273,7 @@ const ProductsForm = props => {
           </Button>
         ) : (
           <Button
-            className="mx-auto bg-green-500"
+            className="mx-auto bg-primary"
             isRounded
             type="submit"
             isLoading={isLoadingCreate}

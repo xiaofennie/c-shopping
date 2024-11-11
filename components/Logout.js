@@ -17,7 +17,7 @@ export default function Logout() {
     dispatch(
       showAlert({
         status: 'success',
-        title: '退出登录成功',
+        title: 'Operator Successful!',
       })
     )
   }
@@ -29,7 +29,7 @@ export default function Logout() {
       className="flex justify-between items-center px-7 transition-colors hover:bg-gray-100 py-4 text-xs text-gray-700 w-full border-t border-gray-300 cursor-pointer gap-x-2 md:text-sm"
       onClick={handleLogout}
     >
-      <span className="text-gray-700">退出</span>
+      <span className="text-gray-700">Sign out</span>
       <Icons.Logout className="text-black icon w-4 h-4" />
     </button>
   )

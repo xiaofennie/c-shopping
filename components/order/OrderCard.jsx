@@ -92,19 +92,19 @@ const OrderCard = props => {
         </div>
         <div className="flex flex-wrap justify-between lg:px-3">
           <div>
-            <span>客户姓名:</span>
+            <span>姓名:</span>
             <span className="ml-2 text-sm text-black">{order.user.name}</span>
           </div>
         </div>
         <div className="flex flex-wrap justify-between lg:px-3">
           <div>
-            <span>客户邮箱:</span>
+            <span>邮箱:</span>
             <span className="ml-2 text-sm text-black">{order.user.email}</span>
           </div>
         </div>
         <div className="flex flex-wrap justify-between lg:px-3">
           <div>
-            <span>客户地址:</span>
+            <span>地址:</span>
             <span className="ml-2 text-sm text-black">
               {`${order.user.address.province.name},${order.user.address.city},
               ${order.user.address.area},${order.user.address.street}(${order.user.address.postalCode})`}

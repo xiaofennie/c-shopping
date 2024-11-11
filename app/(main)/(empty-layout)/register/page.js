@@ -69,7 +69,7 @@ export default function RegisterPage() {
   return (
     <>
       <RedirectToLogin
-        title="注册异常"
+        title="Registration Error"
         text={error?.data?.message}
         onClose={redirectModalHandlers.close}
         isShow={isShowRedirectModal}
@@ -88,23 +88,25 @@ export default function RegisterPage() {
       <main className="grid items-center min-h-screen">
         <section className="container max-w-md px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
           <Link passHref href="/">
-            <Logo className="mx-auto w-48 h-24" />
+            <div className="w-full flex justify-center">
+              <Logo />
+            </div>
           </Link>
           <h1>
             <font className="">
-              <font>注册</font>
+              <font>Sign up</font>
             </font>
           </h1>
           <form className="space-y-4" onSubmit={handleSubmit(submitHander)} autoComplete="off">
             <TextField
               errors={formErrors.name}
-              placeholder="请输入您的账户名称"
+              placeholder="Enter your name"
               name="name"
               control={control}
             />
             <TextField
               errors={formErrors.email}
-              placeholder="请输入您的账户邮箱"
+              placeholder="Enter your email"
               name="email"
               control={control}
             />
@@ -112,7 +114,7 @@ export default function RegisterPage() {
             <TextField
               errors={formErrors.password}
               type="password"
-              placeholder="请输入您的账户密码"
+              placeholder="Enter your password"
               name="password"
               control={control}
             />
@@ -120,15 +122,17 @@ export default function RegisterPage() {
               control={control}
               errors={formErrors.confirmPassword}
               type="password"
-              placeholder="确认密码，请再次输入"
+              placeholder="Enter confirm password again"
               name="confirmPassword"
             />
-            <LoginBtn isLoading={isLoading}>注册</LoginBtn>
+            <LoginBtn isLoading={isLoading} style={{ width: '100%' }}>
+              Sign up
+            </LoginBtn>
           </form>
           <div className="text-xs">
-            <p className="inline mr-2 text-gray-800 text-xs">我已经有账户了</p>
+            <p className="inline mr-2 text-gray-800 text-xs">Already have an account?</p>
             <Link href="/login" className="text-blue-400 text-xs">
-              去登录
+              Sign in
             </Link>
           </div>
         </section>

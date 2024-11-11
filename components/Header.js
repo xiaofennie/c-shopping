@@ -7,7 +7,7 @@ export default function Header() {
         <div className="container lg:flex lg:py-2">
           <div className="inline-flex items-center justify-between w-full border-b lg:border-b-0 lg:max-w-min lg:mr-8">
             <Link passHref href="/">
-              <LogoH className="w-40 h-14" />
+              <LogoH className="h-[40px] w-[146px]" height={40} width={146} />
             </Link>
             <Sidebar />
           </div>
@@ -22,7 +22,7 @@ export default function Header() {
         </div>
         <div className="container py-2 flex justify-between mx-auto relative">
           <Navbar />
-          {/* <AddressBar /> */}
+          <AddressBar />
         </div>
       </header>
     </>

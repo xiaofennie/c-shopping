@@ -8,7 +8,7 @@ export const metadata = {
   title: `${siteTitle} | ${enSiteTitle}`,
   description: `${siteDescription}`,
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon.png',
   },
 }
 

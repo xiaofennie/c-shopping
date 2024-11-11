@@ -13,16 +13,16 @@ function ProfileAside() {
       Icon: Icons.Bag,
       path: '/profile/orders',
     },
-    {
-      name: '我的收藏',
-      Icon: Icons.Heart,
-      path: '/profile/lists',
-    },
-    {
-      name: '我的评价',
-      Icon: Icons.Comment,
-      path: '/profile/reviews',
-    },
+    // {
+    //   name: '我的收藏',
+    //   Icon: Icons.Heart,
+    //   path: '/profile/lists',
+    // },
+    // {
+    //   name: '我的评价',
+    //   Icon: Icons.Comment,
+    //   path: '/profile/reviews',
+    // },
     {
       name: '地址管理',
       Icon: Icons.Location,

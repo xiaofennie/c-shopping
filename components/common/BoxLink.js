@@ -14,7 +14,7 @@ export default function BoxLink(props) {
   return (
     <div
       className={`transition-colors hover:bg-gray-200 px-3 ${
-        asPath === path ? 'border-r-4 border-red-600' : 'border-r-4 border-white'
+        asPath === path ? 'border-r-4 border-light-primary' : 'border-r-4 border-white'
       }`}
     >
       <Link

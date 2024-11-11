@@ -7,7 +7,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="pt-4 mt-8 border-t border-gray-200 bg-gray-50">
-      <div className="container px-3  space-y-8 mx-auto ">
+      <div className="container px-3  space-y-8 mx-auto mb-5">
         {/* Logo & scroll to top */}
         <div className="flex justify-between">
           <div>
@@ -81,7 +81,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex justify-center gap-x-2"></div>
+          <div className="flex justify-center gap-x-2 mb-4"></div>
         </div>
       </div>
 

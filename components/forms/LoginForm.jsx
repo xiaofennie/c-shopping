@@ -30,7 +30,7 @@ const LoginForm = props => {
     <form className="space-y-4" onSubmit={handleSubmit(onSubmit)} autoComplete="off">
       <TextField
         errors={formErrors.email}
-        placeholder="请输入您的账户邮箱"
+        placeholder="Enter your email"
         name="email"
         control={control}
       />
@@ -38,11 +38,13 @@ const LoginForm = props => {
       <TextField
         errors={formErrors.password}
         type="password"
-        placeholder="请输入您的账户密码"
+        placeholder="Enter your password"
         name="password"
         control={control}
       />
-      <LoginBtn isLoading={isLoading}>登录</LoginBtn>
+      <LoginBtn isLoading={isLoading} style={{ width: '100%' }}>
+        Login in
+      </LoginBtn>
     </form>
   )
 }
