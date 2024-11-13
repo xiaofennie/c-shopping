@@ -19,7 +19,7 @@ services:
 
   db:
     container_name: db
-    image: 'mongo'
+    image: mongo:5.0.18
     restart: always
     volumes:
       - ./data/db:/data/db
