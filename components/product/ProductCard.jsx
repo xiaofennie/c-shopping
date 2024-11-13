@@ -5,7 +5,7 @@ import {
   ProductPrice,
   Depot,
   ResponsiveImage,
-} from 'components'
+} from '@/components'
 import { truncate } from 'utils'
 
 const ProductCard = props => {
@@ -18,13 +18,13 @@ const ProductCard = props => {
       <article
         className={`pt-2 pb-3 border-b border-gray-100 sm:h-[540px] xl:h-[470px] sm:px-3 ${
           !slide && 'sm:border sm:hover:shadow-3xl'
-        }`}
+        } mx-2`}
       >
         <SpecialSell discount={product.discount} inStock={product.inStock} />
         <div className="flex items-center gap-4 sm:flex-col sm:space-x-4">
           <div className="sm:flex sm:p-1 ">
             <ResponsiveImage
-              dimensions="h-[28vw] w-[26vw] sm:w-56 sm:h-60 sm:mb-8 xl:w-44 xl:h-48"
+              dimensions="h-[30vw] w-[30vw] sm:w-56 sm:h-60 sm:mb-8 xl:w-44 xl:h-48"
               src={product.images[0].url}
               alt={product.title}
             />
@@ -54,15 +54,24 @@ const ProductCard = props => {
               {truncate(product.title, 90)}
             </h2>
             <div className="flex justify-between">
-              <div>
+              <div className="flex items-center gap-x-1">
                 <Depot inStock={product.inStock} />
               </div>
-              <div className="flex items-center gap-x-1">
+              {product.inStock !== 0 ? (
+                <ProductPrice
+                  inStock={product.inStock}
+                  discount={product.discount}
+                  price={product.price}
+                />
+              ) : (
+                <></>
+              )}
+              {/* <div className="flex items-center gap-x-1">
                 <span className="">{product.rating.toFixed(1)}</span>
                 <Icons.Star className="icon text-amber-400" />
-              </div>
+              </div> */}
             </div>
-            <div className="flex justify-between">
+            {/* <div className="flex justify-between">
               <div>
                 {product.discount > 0 && product.inStock !== 0 && (
                   <DiscountProduct discount={product.discount} />
@@ -75,9 +84,9 @@ const ProductCard = props => {
                   price={product.price}
                 />
               ) : (
-                <span className="h-12 my-0.5">不可用</span>
+                <></>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </article>

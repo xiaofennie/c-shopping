@@ -13,7 +13,7 @@ import {
   RedirectToLogin,
   Button,
   EmptyCart,
-} from 'components'
+} from '@/components'
 import { Menu, Transition } from '@headlessui/react'
 
 import { formatNumber } from 'utils'
@@ -60,7 +60,7 @@ const CartPage = () => {
           <Menu.Item>
             <button onClick={() => dispatch(clearCart())} className="px-4 py-3 flex-center gap-x-2">
               <Icons.Delete className="icon" />
-              <span>删除全部</span>
+              <span>Delete All</span>
             </button>
           </Menu.Item>
         </Menu.Items>
@@ -77,7 +77,7 @@ const CartPage = () => {
 
           <div className="py-20">
             <EmptyCart className="mx-auto h-52 w-52" />
-            <p className="text-base font-bold text-center">您的购物车是空的！</p>
+            <p className="text-base font-bold text-center text-gray-700">Your shopping cart is empty </p>
           </div>
         </section>
       </>
@@ -86,7 +86,7 @@ const CartPage = () => {
   return (
     <>
       <RedirectToLogin
-        title="您还没有登录"
+        title="You have not signed in yet"
         text=""
         onClose={redirectModalHandlers.close}
         isShow={isShowRedirectModal}
@@ -96,8 +96,8 @@ const CartPage = () => {
           {/* title */}
           <section className="flex justify-between px-4">
             <div>
-              <h3 className="mb-2 text-sm font-bold">您的购物车</h3>
-              <span className="">{formatNumber(totalItems)} 件商品</span>
+              <h3 className="mb-2 text-sm font-bold">Your shopping cart</h3>
+              <span className="">{formatNumber(totalItems)} items</span>
             </div>
             <DeleteAllDropDown />
           </section>
@@ -117,20 +117,20 @@ const CartPage = () => {
           <div className="lg:border lg:border-gray-200 lg:rounded-md">
             <CartInfo handleRoute={handleRoute} cart />
           </div>
-          <FreeShipping />
+          {/* <FreeShipping /> */}
         </section>
 
         {/* to Shipping */}
         <section className="fixed bottom-0 left-0 right-0 z-10 flex items-center justify-between px-3 py-3 bg-white border-t border-gray-300 shadow-3xl lg:hidden">
           <div>
-            <span className="font-light">总计购物车</span>
+            <span className="font-light">Total</span>
             <div className="flex items-center">
               <span className="text-sm">{formatNumber(totalPrice - totalDiscount)}</span>
               <span className="ml-1">¥</span>
             </div>
           </div>
           <Button className="w-1/2" onClick={handleRoute}>
-            继续
+            Continue
           </Button>
         </section>
       </main>

@@ -15,7 +15,7 @@ const Specification = props => {
   return (
     <section className="px-4">
       <div className="lg:max-w-3xl xl:max-w-5xl">
-        <h4 className="mb-3 h-fit w-fit lg:border-b-2 lg:border-red-500">规格</h4>
+        <h4 className="mb-3 h-fit w-fit lg:border-b-2 lg:border-light-primary">Specifications</h4>
 
         <div className="lg:ml-10 lg:pr-12">
           <ul className="space-y-4 lg:mt-10">
@@ -41,7 +41,7 @@ const Specification = props => {
               className="flex items-center py-2 text-sm text-sky-400"
               onClick={showSpecHandlers.toggle}
             >
-              {isShowSpec ? '收起' : '查看更多'}
+              {isShowSpec ? 'Retract' : 'More Details'}
               {!isShowSpec && <Icons.ArrowRight2 className="icon text-sky-400 " />}
             </button>
           )}

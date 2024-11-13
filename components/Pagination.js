@@ -33,7 +33,7 @@ export default function Pagination(props) {
               }}
             >
               <Icons.ArrowLeft className="text-red-500 icon" />
-              上一页
+              previous page
             </li>
           )}
         </div>
@@ -102,7 +102,7 @@ export default function Pagination(props) {
                 scrollToTop()
               }}
             >
-              下一页
+              next page
               <Icons.ArrowRight2 className="text-red-500 icon" />
             </li>
           )}

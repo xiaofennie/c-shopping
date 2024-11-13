@@ -29,7 +29,7 @@ export default function TextField(props) {
       )}
       <input
         style={{ direction: `${direction === 'ltr' ? 'ltr' : ''}` }}
-        className="block w-full px-3 py-1.5 text-base transition-colors border border-gray-200 rounded-md outline-none bg-zinc-50/30 lg:text-lg focus:border-blue-600"
+        className="block w-full px-3 py-1.5 text-base transition-colors border border-gray-200 rounded-md outline-none bg-zinc-50/30 lg:text-base focus:border-light-primary"
         id={name}
         type={type}
         value={field?.value}

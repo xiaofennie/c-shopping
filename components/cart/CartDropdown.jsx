@@ -6,7 +6,7 @@ import { formatNumber } from 'utils'
 import { useUserInfo, useDisclosure, useAppSelector } from 'hooks'
 
 import { Menu, Transition } from '@headlessui/react'
-import { ArrowLink, CartItem, RedirectToLogin, Button, CartBadge, EmptyCart } from 'components'
+import { ArrowLink, CartItem, RedirectToLogin, Button, CartBadge, EmptyCart } from '@/components'
 
 export default function CartDropdown() {
   //? Assets
@@ -28,7 +28,7 @@ export default function CartDropdown() {
   return (
     <>
       <RedirectToLogin
-        title="您尚未登录"
+        title="You have not signed in yet"
         text=""
         onClose={redirectModalHandlers.close}
         isShow={isShowRedirectModal}
@@ -53,8 +53,8 @@ export default function CartDropdown() {
               <>
                 {/* Header */}
                 <div className="flex items-center justify-between px-3 py-4">
-                  <span className="">{totalItems} 件商品</span>
-                  <ArrowLink path="/checkout/cart">查看购物车</ArrowLink>
+                  <span className="">{totalItems} items</span>
+                  <ArrowLink path="/checkout/cart">Go to Shopping Cart</ArrowLink>
                 </div>
                 {/* Itmes */}
                 <div className="mx-1 overflow-y-auto divide-y divide-gray-50 h-80">
@@ -65,20 +65,20 @@ export default function CartDropdown() {
                 {/* Footer */}
                 <div className="flex items-center justify-between p-3 border-t">
                   <div>
-                    <span>应付金额</span>
+                    <span>Total</span>
                     <div className="flex-center">
                       <span className="text-sm">{formatNumber(totalPrice - totalDiscount)}</span>
                       <span className="ml-1">¥</span>
                     </div>
                   </div>
 
-                  <Button onClick={handleRoute}>去支付</Button>
+                  <Button className="bg-primary" onClick={handleRoute}>Continue</Button>
                 </div>
               </>
             ) : (
               <>
                 <EmptyCart className="mx-auto h-44 w-44" />
-                <p className="pt-2 text-base font-bold text-center">你的购物车是空的！</p>
+                <p className="py-2 text-base font-bold text-gray-600 text-center">Your shopping cart is empty</p>
               </>
             )}
           </Menu.Items>

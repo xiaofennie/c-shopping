@@ -6,7 +6,7 @@ export default function SubCategoriesSkeleton() {
       <Skeleton.Item animated="background" height="h-5" width="w-24" className="mb-4 " />
       <div className="flex gap-3 pb-3 overflow-x-auto ">
         <Skeleton count={5}>
-          <Skeleton.Items className="p-3 border-4 border-red-200 rounded-md">
+          <Skeleton.Items className="p-3 border-4 border-light-primary/40 rounded-md">
             <Skeleton.Item
               animated="background"
               height="h-24 md:h-32 xl:h-40"

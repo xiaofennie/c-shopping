@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { AddToCartOperation, Depot, Icons, ResponsiveImage } from 'components'
+import { AddToCartOperation, Depot, Icons, ResponsiveImage, LogoTitle } from '@/components'
 
 import { formatNumber } from 'utils'
 
@@ -24,15 +24,18 @@ const AddToCart = props => {
 
       {/* desktop */}
       <div
-        className={`hidden divide-y lg:col-start-8 lg:col-end-10 lg:row-start-2 lg:row-end-5 lg:rounded-lg lg:bg-gray-100 lg:flex lg:flex-col   xl:row-end-5 lg:px-3 lg:py-1.5 lg:border lg:border-gray-200 lg:shadow lg:sticky ${
-          second ? 'lg:top-4 xl:top-32' : 'lg:top-60 xl:top-[260px]'
+        className={`hidden divide-y lg:col-start-8 lg:col-end-10 lg:row-start-2 lg:row-end-5 lg:rounded-lg lg:flex lg:flex-col  xl:row-end-5 lg:px-4 lg:py-3 lg:border lg:border-gray-200 lg:shadow lg:sticky ${
+          second ? 'lg:top-2 xl:top-32' : 'lg:top-60 xl:top-[260px]'
         } `}
       >
         <div className="items-center justify-between hidden space-y-2 lg:py-3 lg:flex">
-          <span className="text-base text-black">卖方 :</span>
-          <div className="flex gap-x-2">
+          {/* <span className="text-base text-black">卖方 :</span> */}
+          {/* <div className="flex gap-x-2">
             <Image src="/icons/mini-logo.png" width={24} height={24} alt={siteTitle} />
             <span>{siteTitle}</span>
+          </div> */}
+          <div className="w-full flex justify-center">
+            <LogoTitle />
           </div>
         </div>
         {second && (
@@ -65,10 +68,10 @@ const AddToCart = props => {
           </>
         )}
 
-        <div className="py-3 lg:items-center lg:gap-x-2 lg:flex">
+        {/* <div className="py-3 lg:items-center lg:gap-x-2 lg:flex">
           <Icons.ShieldCheck className="icon" />
           <span className="font-light">正品保证和发货保证</span>
-        </div>
+        </div> */}
 
         <div className="lg:block lg:py-3 ">
           <Depot inStock={product.inStock} />
@@ -76,7 +79,7 @@ const AddToCart = props => {
 
         <div className="lg:flex lg:items-center lg:gap-x-1 lg:py-3">
           <Icons.Check className="icon" />
-          <span> 销售 :</span>
+          <span>Sold: </span>
           <span className="">{formatNumber(product.sold)}</span>
         </div>
 

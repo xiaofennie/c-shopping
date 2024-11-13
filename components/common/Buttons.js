@@ -1,4 +1,4 @@
-import { Loading } from 'components'
+import { Loading } from '@/components'
 
 export const Button = props => {
   //? Props
@@ -20,7 +20,7 @@ export const Button = props => {
       `}
       {...restPropps}
     >
-      {isLoading ? <Loading /> : children}
+      {isLoading ? <Loading color="#fff" /> : children}
     </button>
   )
 }
@@ -34,7 +34,7 @@ export const LoginBtn = ({ children, ...restPropps }) => (
 export const SubmitModalBtn = ({ children, ...restPropps }) => (
   <Button
     type="submit"
-    className="w-full max-w-xl mx-auto rounded-md btn lg:w-64 lg:ml-0"
+    className="w-full max-w-xl mx-auto rounded-md btn lg:w-64 lg:ml-0 bg-primary"
     {...restPropps}
   >
     {children}

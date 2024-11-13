@@ -15,7 +15,7 @@ import {
   Info,
   Breadcrumb,
   InitialStore,
-} from 'components'
+} from '@/components'
 import { db } from '@/helpers'
 
 export const getData = async params => {
@@ -80,21 +80,22 @@ const SingleProduct = async ({ params }) => {
 
           {product.inStock > 0 && product.sizes.length > 0 && <SelectSize sizes={product.sizes} />}
 
-          {product.inStock === 0 && <OutOfStock />}
+          {/* {product.inStock === 0 && <OutOfStock />} */}
 
           <Info infos={product?.info} />
 
           {/* <FreeShipping /> */}
         </div>
-        {/* <div className="lg:col-span-2">
+        <div className="lg:col-span-2">
           {product.inStock > 0 && <AddToCart product={product} />}
-        </div> */}
+        </div>
       </div>
 
       {/* <Services /> */}
 
-      {product.description.length > 0 && <Description description={product.description} />}
+      {product?.description?.length > 0 && <Description description={product.description} />}
 
+      {/* 相似商品 */}
       {/* <SmilarProductsSlider smilarProducts={smilarProducts} /> */}
 
       <div className="section-divide-y" />

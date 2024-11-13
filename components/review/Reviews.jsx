@@ -47,7 +47,7 @@ const Reviews = props => {
   return (
     <>
       <RedirectToLogin
-        title="您尚未登录"
+        title="You have not signed in yet"
         text=""
         onClose={redirectModalHandlers.close}
         isShow={isShowRedirectModal}

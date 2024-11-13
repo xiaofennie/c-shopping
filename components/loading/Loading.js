@@ -1,6 +1,9 @@
 'use client'
 
-export default function Loading() {
+export default function Loading(props) {
+
+  const { color } = props
+
   return (
     <div className="lds-ellipsis">
       <div></div>
@@ -20,7 +23,7 @@ export default function Loading() {
           width: 13px;
           height: 13px;
           border-radius: 50%;
-          background: #fff;
+          background: ${color || '#cd1c78'};
           // background: #ee384e;
           animation-timing-function: cubic-bezier(0, 1, 1, 0);
         }

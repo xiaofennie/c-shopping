@@ -45,20 +45,20 @@ const CartItem = props => {
               <span className="">{item.size.size}</span>
             </div>
           )}
-          <div className="flex items-center gap-x-2">
+          {/* <div className="flex items-center gap-x-2">
             <Icons.ShieldCheck className="icon" />
             <span className="font-light">正品保证和发货保证</span>
           </div>
           <div className="flex items-center gap-x-2">
             <Icons.Save className="icon text-sky-400" />
             <span className="font-light">仓库有售</span>
-          </div>
+          </div> */}
           {item.discount > 0 ? (
             <DiscountCartItem discount={item.discount} price={item.price} />
           ) : (
-            <div className="flex items-center gap-x-2">
-              <span className="text-sm text-gray-700">{formatNumber(item.price)}</span>
-              <span className="">¥</span>
+            <div className="flex items-center justify-end gap-x-2">
+              <span className="text-sm font-bold text-gray-700">{formatNumber(item.price)}</span>
+              <span className="font-bold text-gray-700">¥</span>
             </div>
           )}
         </div>

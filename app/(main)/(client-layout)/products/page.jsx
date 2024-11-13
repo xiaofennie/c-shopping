@@ -1,14 +1,6 @@
 'use client'
 
-import {
-  ProductCard,
-  Pagination,
-  Sort,
-  ProductsAside,
-  SubCategories,
-  Filter,
-  ProductSkeleton,
-} from 'components'
+import { ProductCard, Pagination, Sort, ProductsAside, SubCategories, Filter } from '@/components'
 
 import { useChangeRoute, useMediaQuery } from 'hooks'
 
@@ -77,10 +69,10 @@ const ProductsHome = () => {
             mainMinPrice={data?.data?.mainMinPrice}
             handleChangeRoute={handleChangeRoute}
           />
-          <div id="_products" className="w-full p-4 mt-3 ">
+          <div id="_products" className="w-full p-4">
             {/* Filters & Sort */}
             <div className="divide-y-2 ">
-              <div className="flex py-2 gap-x-3">
+              {/* <div className="flex py-2 gap-x-3">
                 {!isDesktop && (
                   <Filter
                     mainMaxPrice={data?.mainMaxPrice}
@@ -90,24 +82,24 @@ const ProductsHome = () => {
                 )}
 
                 <Sort handleChangeRoute={handleChangeRoute} />
-              </div>
+              </div> */}
 
               <div className="flex justify-between py-2">
-                <span>所有商品</span>
-                <span className="">{data?.data?.productsLength} 件商品</span>
+                <span>All products</span>
+                <span className="">{data?.data?.productsLength} items</span>
               </div>
             </div>
 
             {/* Products */}
             {isFetchingProduct ? (
-              <ProductSkeleton />
+              <></>
             ) : data && data?.data?.products.length > 0 ? (
               <section className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                 {data?.data?.products.map(item => <ProductCard product={item} key={item._id} />)}
               </section>
             ) : (
-              <section className="text-center text-red-500 xl:border xl:border-gray-200 xl:rounded-md xl:py-4">
-                没有找到商品
+              <section className="text-center text-primary xl:border xl:border-gray-200 xl:rounded-md xl:py-4">
+                Coming soon.
               </section>
             )}
           </div>

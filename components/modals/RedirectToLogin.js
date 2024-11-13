@@ -25,14 +25,14 @@ export default function RedirectToLogin(props) {
             <Image
               className="mx-auto"
               src="/icons/exclamation.svg"
-              height={80}
-              width={80}
+              height={60}
+              width={60}
               alt="!"
             />
-            <p className="text-xl font-bold">{title}</p>
+            <p className="font-bold text-gray-700">{title}</p>
             <p className="text-red-600">{text}</p>
-            <Button className="mx-auto" onClick={handleClick}>
-              去登录
+            <Button className="mx-auto bg-primary" onClick={handleClick}>
+              Sign in
             </Button>
           </div>
         </Modal.Body>

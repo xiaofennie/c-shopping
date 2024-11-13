@@ -62,14 +62,9 @@ export const addressSchema = Yup.object().shape({
   province: Yup.object().shape({
     name: Yup.string().required('Please select your province'),
   }),
-  city: Yup.object().shape({
-    name: Yup.string().required('Please select your city'),
-  }),
-  area: Yup.object().shape({
-    name: Yup.string().required('Please select your street'),
-  }),
-  street: Yup.string().required('Street is required'),
-  postalCode: Yup.string().required('Enter your postal code'),
+  city: Yup.string().required('Please enter your city'),
+  area: Yup.string().required('Please enter your street'),
+  postalCode: Yup.string().required('Please enter your postal code'),
 })
 
 export const nameSchema = Yup.object().shape({

@@ -8,7 +8,7 @@ const BasicAddressBar = ({ addressModalProps }) => {
   if (!isVerify) {
     return null
   } else if (isLoading) {
-    return <Skeleton.Item animated="background" height="h-5 lg:h-6" width="w-3/4 lg:w-1/4" />
+    // return <Skeleton.Item animated="background" height="h-5 lg:h-6" width="w-3/4 lg:w-1/4" />
   } else if (!isAddress) {
     return (
       <button
@@ -31,7 +31,7 @@ const BasicAddressBar = ({ addressModalProps }) => {
       >
         <Icons.Location2 className="icon" />
         <span>
-          Send to {address?.province.name}, {address?.city.name}, {address?.area.name}
+          Send to {address?.province.name}, {address?.city}
         </span>
         <Icons.ArrowRight2 className="mr-auto icon" />
       </button>

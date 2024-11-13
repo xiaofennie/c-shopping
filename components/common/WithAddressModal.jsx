@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AddressModal } from 'components'
+import { AddressModal } from '@/components'
 
 import { useDisclosure, useUserInfo } from 'hooks'
 

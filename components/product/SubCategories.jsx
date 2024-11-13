@@ -10,10 +10,11 @@ const SubCategories = props => {
   return (
     <section className="px-4 my-7">
       {isLoading ? (
-        <SubCategoriesSkeleton />
+        // <SubCategoriesSkeleton />
+        <></>
       ) : childCategories && childCategories.length > 0 ? (
         <>
-          <h4 className="mb-4 text-base text-black lg:pt-4">类别</h4>
+          <h4 className="mb-4 text-base text-black lg:pt-4">Categories</h4>
           <div className="flex gap-3 pb-3 overflow-x-auto">
             {childCategories.map(item => (
               <Link

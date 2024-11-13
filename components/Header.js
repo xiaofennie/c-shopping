@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Icons, Search, Signup, Cart, Navbar, Sidebar, AddressBar, LogoH } from 'components'
+import { Icons, Search, Signup, Cart, Navbar, Sidebar, AddressBar, LogoH } from '@/components'
 export default function Header() {
   return (
     <>

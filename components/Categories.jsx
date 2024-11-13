@@ -19,8 +19,8 @@ const Categories = props => {
           >
             {name}
           </span>
-          {' - '}
-          {childCategories.title}
+          {/* {' - '}
+          {childCategories.title} */}
         </h4>
         <div className="flex flex-wrap justify-center gap-4 mx-auto space-x-4 w-fit">
           {childCategories.categories.map((item, index) => (

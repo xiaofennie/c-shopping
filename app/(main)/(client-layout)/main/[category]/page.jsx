@@ -10,7 +10,7 @@ import {
   DiscountSlider,
   MostFavouraiteProducts,
   Slider as MainSlider,
-} from 'components'
+} from '@/components'
 import { siteTitle } from '@/utils'
 
 // export const revalidate = 20
@@ -60,7 +60,7 @@ const MainCategory = async ({ params: { category } }) => {
       <div className="py-4 mx-auto space-y-12 xl:mt-28">
         <MainSlider data={sliders} />
 
-        <DiscountSlider currentCategory={currentCategory} />
+        {/* <DiscountSlider currentCategory={currentCategory} /> */}
 
         <Categories
           childCategories={{ categories: childCategories, title: '所有分类' }}
@@ -74,7 +74,7 @@ const MainCategory = async ({ params: { category } }) => {
 
         <BannerTwo data={bannerTwoType} />
 
-        <MostFavouraiteProducts categorySlug={currentCategory.slug} />
+        {/* <MostFavouraiteProducts categorySlug={currentCategory.slug} /> */}
       </div>
     </main>
   )

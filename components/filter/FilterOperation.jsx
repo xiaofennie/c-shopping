@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-import { CustomCheckbox } from 'components'
+import { CustomCheckbox } from '@/components'
 
 import { useAppDispatch, useAppSelector, useDebounce } from 'hooks'
 
@@ -85,11 +85,11 @@ const FilterOperation = props => {
       <div className="flex justify-end ">
         <button
           type="button"
-          className="text-sm text-sky-500"
+          className="text-sm text-sky-500 mr-2"
           onClick={handleResetFilters}
           disabled={!canReset}
         >
-          删除过滤器
+          Reset
         </button>
       </div>
 
@@ -98,17 +98,17 @@ const FilterOperation = props => {
           name="inStock"
           checked={filters.inStock}
           onChange={handlefilter}
-          label="仅限库存商品"
+          label="Only for in stock"
         />
 
-        <CustomCheckbox
+        {/* <CustomCheckbox
           name="discount"
           checked={filters.discount}
           onChange={handlefilter}
           label="仅限特价商品"
-        />
+        /> */}
 
-        <div className="py-4">
+        {/* <div className="py-4">
           <span className="font-medium text-gray-700">价格范围</span>
           <div className="flex items-center justify-between gap-x-1">
             <span className="text-base">从</span>
@@ -135,7 +135,7 @@ const FilterOperation = props => {
 
             <span className="w-6 h-6">¥</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   )

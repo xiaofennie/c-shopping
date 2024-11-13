@@ -122,7 +122,7 @@ export default function RegisterPage() {
               control={control}
               errors={formErrors.confirmPassword}
               type="password"
-              placeholder="Enter confirm password again"
+              placeholder="Confirm password again"
               name="confirmPassword"
             />
             <LoginBtn isLoading={isLoading} style={{ width: '100%' }}>

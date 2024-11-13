@@ -52,14 +52,14 @@ const Combobox = props => {
           <HUICombobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg border border-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50">
             {filteredList.length === 0 && query !== '' ? (
               <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
-                未找到任何项目!
+                No item found
               </div>
             ) : (
               filteredList.map(item => (
                 <HUICombobox.Option
-                  key={item.code}
-                  className={`relative cursor-pointer transition-colors select-none py-3 pl-10 pr-4 hover:bg-teal-100 text-white
-                  ${field.value?.code === item.code ? 'bg-teal-50' : ''}
+                  key={item.id}
+                  className={`relative cursor-pointer transition-colors select-none py-3 pl-10 pr-4 hover:bg-light-primary/20 text-white
+                  ${field.value?.id === item.id ? 'bg-light-primary/20' : ''}
                   `}
                   value={item}
                 >
@@ -67,18 +67,18 @@ const Combobox = props => {
                     <>
                       <span
                         className={`block truncate lg:text-sm ${
-                          field.value?.code === item.code ? 'font-semibold' : 'font-normal'
+                          field.value?.id === item.id ? 'font-semibold' : 'font-normal'
                         }`}
                       >
                         {item.name}
                       </span>
-                      {field.value?.code === item.code ? (
+                      {field.value?.id === item.id ? (
                         <span
                           className={`absolute inset-y-0 left-0 flex-center pl-3  ${
-                            active ? 'text-white' : 'text-teal-600'
+                            active ? 'text-white' : 'text-light-primary/60'
                           }`}
                         >
-                          <HiCheck className="text-teal-600 icon" aria-hidden="true" />
+                          <HiCheck className="text-light-primary/60 icon" aria-hidden="true" />
                         </span>
                       ) : null}
                     </>

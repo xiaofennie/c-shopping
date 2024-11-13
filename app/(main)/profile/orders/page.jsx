@@ -8,14 +8,14 @@ import {
   EmptyOrdersList,
   PageContainer,
   OrderSkeleton,
-} from 'components'
+} from '@/components'
 
 import { useGetOrdersQuery } from '@/store/services'
 
 import { useTitle, useUrlQuery } from '@/hooks'
 
 const Orders = () => {
-  useTitle('订单管理')
+  useTitle('My Orders')
   //? Assets
   const query = useUrlQuery()
   const changeRoute = useChangeRoute()
@@ -29,7 +29,7 @@ const Orders = () => {
   //? Render
   return (
     <main id="profileOrders">
-      <PageContainer title="订单历史">
+      <PageContainer title="My Orders">
         <ShowWrapper
           error={error}
           isError={isError}
@@ -38,7 +38,7 @@ const Orders = () => {
           isSuccess={isSuccess}
           dataLength={data ? data?.data?.ordersLength : 0}
           emptyComponent={<EmptyOrdersList />}
-          loadingComponent={<OrderSkeleton />}
+          loadingComponent={<></>}
         >
           <div className="px-4 py-3 space-y-3">
             {data?.data?.orders.map(item => <OrderCard key={item._id} order={item} />)}

@@ -43,7 +43,7 @@ const LoginForm = props => {
         control={control}
       />
       <LoginBtn isLoading={isLoading} style={{ width: '100%' }}>
-        Login in
+        Sign in
       </LoginBtn>
     </form>
   )

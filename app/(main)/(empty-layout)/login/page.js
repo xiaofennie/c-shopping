@@ -51,7 +51,7 @@ export default function LoginPage() {
           </Link>
           <h1>
             <font className="">
-              <font>Login in</font>
+              <font>Sign in</font>
             </font>
           </h1>
           <LoginForm isLoading={isLoading} onSubmit={submitHander} />

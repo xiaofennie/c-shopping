@@ -21,7 +21,7 @@ export default function Error({ error, reset }) {
             () => reset()
           }
         >
-          重试
+          Retry
         </Button>
       </div>
     </>

@@ -44,24 +44,25 @@ export default function Orders() {
       <div className="py-6 lg:py-0">
         <div className="flex justify-between px-5 mb-7">
           <h4 className="inline-block py-1 text-sm border-b-2 border-red-500 md:text-base">
-            我的订单
+            My Orders
           </h4>
-          <ArrowLink path="profile/orders">查看全部</ArrowLink>
+          <ArrowLink path="profile/orders">Show More</ArrowLink>
         </div>
         <div className="flex justify-evenly lg:py-20">
           {isLoading ? (
-            <StatusSkeleton />
+            // <StatusSkeleton />
+            <></>
           ) : (
             <div className="flex flex-col items-center lg:flex-row lg:gap-x-2">
               <div className="relative w-12 h-12 lg:w-14 lg:h-14">
-                <Image src="/icons/status-processing.svg" fill alt="当前订单" />
+                <Image src="/icons/status-processing.svg" fill alt="Current orders" />
                 <span className="absolute order-badge">{formatNumber(pendingOrder)}</span>
               </div>
               <div className="text-gray-700">
                 <span className="hidden lg:block lg:text-black lg:text-md">
-                  {formatNumber(pendingOrder)} 条记录
+                  {formatNumber(pendingOrder)} records
                 </span>
-                <span className="text-xs lg:text-sm">当前订单</span>
+                <span className="text-xs lg:text-sm">Current orders</span>
               </div>
             </div>
           )}
@@ -69,30 +70,32 @@ export default function Orders() {
           <div className="section-divide-x" />
 
           {isLoading ? (
-            <StatusSkeleton />
+            // <StatusSkeleton />
+            <></>
           ) : (
             <div className="flex flex-col items-center lg:flex-row lg:gap-x-2">
               <div className="relative w-12 h-12 lg:w-14 lg:h-14">
-                <Image src="/icons/status-delivered.svg" fill alt="成功订单" />
+                <Image src="/icons/status-delivered.svg" fill alt="Successful orders" />
                 <span className="absolute order-badge">{formatNumber(successOrder)}</span>
               </div>
               <div className="text-gray-700">
                 <span className="hidden lg:block lg:text-black lg:text-md">
-                  {formatNumber(successOrder)} 条记录
+                  {formatNumber(successOrder)} records
                 </span>
-                <span className="text-xs lg:text-sm">成功订单</span>
+                <span className="text-xs lg:text-sm">Successful orders</span>
               </div>
             </div>
           )}
 
-          <div className="section-divide-x" />
+          {/* <div className="section-divide-x" /> */}
 
-          {isLoading ? (
-            <StatusSkeleton />
+          {/* {isLoading ? (
+            // <StatusSkeleton />
+            <></>
           ) : (
             <div className="flex flex-col items-center lg:flex-row lg:gap-x-2">
               <div className="relative w-12 h-12 lg:w-14 lg:h-14">
-                <Image src="/icons/status-returned.svg" fill alt="退款订单" />
+                <Image src="/icons/status-returned.svg" fill alt="Refund orders" />
                 <span className="absolute order-badge">0</span>
               </div>
               <div className="text-gray-700">
@@ -100,7 +103,7 @@ export default function Orders() {
                 <span className="text-xs lg:text-sm">退款订单</span>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
       <div className="section-divide-y" />

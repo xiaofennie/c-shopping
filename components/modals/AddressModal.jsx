@@ -7,11 +7,13 @@ import { useEditUserMutation } from '@/store/services'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-import { addressSchema } from 'utils'
+import { addressSchema } from '@/utils'
 
 import { useUserInfo } from 'hooks'
 
 import regions from 'china-citys'
+
+import { State } from 'usa-state-city'
 
 import {
   TextField,
@@ -20,21 +22,21 @@ import {
   Combobox,
   Modal,
   HandleResponse,
-} from 'components'
+} from '@/components'
 
 const AddressModal = props => {
   //? Porps
   const { isShow, onClose, address } = props
 
   //? Assets
-  let AllProvinces = regions.getProvinces()
+  let AllProvinces = State.getStatesOfUSA()
 
   //? Get User Data
   const { userInfo } = useUserInfo()
 
   //? State
-  const [cities, setCities] = useState([])
-  const [areas, setAreas] = useState([])
+  // const [cities, setCities] = useState([])
+  // const [areas, setAreas] = useState([])
 
   //? Form Hook
   const {
@@ -54,17 +56,17 @@ const AddressModal = props => {
 
   //? Re-Renders
   //* Change cities beside on province
-  useEffect(() => {
-    setValue('area', {})
-    getValues('city')?.code ? setAreas(regions.getAreasByCity(getValues('city')?.code)) : ''
-    watch('city')
-  }, [getValues('city')?.code])
+  // useEffect(() => {
+  //   setValue('area', {})
+  //   getValues('city')?.code ? setAreas(regions.getAreasByCity(getValues('city')?.code)) : ''
+  //   watch('city')
+  // }, [getValues('city')?.code])
 
-  useEffect(() => {
-    setValue('city', {})
-    setCities(regions.getCitysByProvince(getValues('province')?.code))
-    watch('province')
-  }, [getValues('province')?.code])
+  // useEffect(() => {
+  //   setValue('city', {})
+  //   setCities(regions.getCitysByProvince(getValues('province')?.code))
+  //   watch('province')
+  // }, [getValues('province')?.code])
 
   useEffect(() => {
     if (userInfo?.address) {
@@ -99,25 +101,29 @@ const AddressModal = props => {
           onClose={onClose}
           className="flex flex-col h-full px-5 py-3 bg-white md:rounded-lg gap-y-5 "
         >
-          <Modal.Header onClose={onClose}>地址管理</Modal.Header>
+          <Modal.Header onClose={onClose}>Add Your Address</Modal.Header>
           <Modal.Body>
-            <p>请输入您的收货地址</p>
+            {/* <p>Please enter your shipping address
+            </p> */}
             <form
               className="flex flex-col justify-between flex-1 pl-4 overflow-y-auto"
               onSubmit={handleSubmit(submitHander)}
             >
               <div className="space-y-12 md:grid md:grid-cols-3 md:gap-x-12 md:gap-y-5 md:items-baseline ">
                 <div className="space-y-2">
+                  <div className="block text-xs text-gray-700 lg:text-sm md:min-w-max mb-3" htmlFor={name}>
+                    State
+                  </div>
                   <Combobox
                     control={control}
                     name="province"
                     list={AllProvinces}
-                    placeholder="请选择您所在的省份"
+                    placeholder="Please select your state"
                   />
                   <DisplayError errors={formErrors.province?.name} />
                 </div>
 
-                <div className="space-y-2 ">
+                {/* <div className="space-y-2 ">
                   <Combobox
                     control={control}
                     name="city"
@@ -125,8 +131,14 @@ const AddressModal = props => {
                     placeholder="请选择您所在的城市"
                   />
                   <DisplayError errors={formErrors.city?.name} />
-                </div>
-
+                </div> */}
+                <TextField
+                  label="City"
+                  control={control}
+                  errors={formErrors.city}
+                  name="city"
+                />
+{/* 
                 <div className="space-y-2 ">
                   <Combobox
                     control={control}
@@ -135,17 +147,18 @@ const AddressModal = props => {
                     placeholder="请选择您所在的区县"
                   />
                   <DisplayError errors={formErrors.area?.name} />
-                </div>
+                </div> */}
+
+                <TextField label="Street" control={control} errors={formErrors.area} name="area" />
 
                 <TextField
-                  label="街道信息"
+                  label="Street"
                   control={control}
-                  errors={formErrors.street}
                   name="street"
                 />
 
                 <TextField
-                  label="邮政编码"
+                  label="Postal Code"
                   control={control}
                   errors={formErrors.postalCode}
                   name="postalCode"
@@ -156,8 +169,8 @@ const AddressModal = props => {
               </div>
 
               <div className="py-3 border-t-2 border-gray-200 lg:pb-0 flex">
-                <SubmitModalBtn isLoading={isLoading} className="ml-auto">
-                  确定
+                <SubmitModalBtn isLoading={isLoading} className="ml-auto bg-primary">
+                  Submit
                 </SubmitModalBtn>
               </div>
             </form>

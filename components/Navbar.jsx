@@ -61,7 +61,8 @@ export default function Navbar() {
         <div className="flex">
           <ul className="border-l-2 border-gray-100 w-72">
             {isLoading ? (
-              <NavbarSkeleton />
+              // <NavbarSkeleton />
+              <></>
             ) : categories ? (
               categories
                 .filter(category => category.level === 1)

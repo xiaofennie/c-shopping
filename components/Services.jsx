@@ -27,7 +27,7 @@ export default function Services() {
       {services.map((item, i) => (
         <div key={i} className="flex items-center gap-x-1">
           {item.icon}
-          <span className="text-xs">{item.name}</span>
+          {/* <span className="text-xs">{item.name}</span> */}
         </div>
       ))}
     </section>

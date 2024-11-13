@@ -1,4 +1,4 @@
-import { FilterOperation } from 'components'
+import { FilterOperation } from '@/components'
 
 const ProductsAside = props => {
   //? Props

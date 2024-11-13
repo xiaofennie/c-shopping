@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { CartDropdown, CartBadge } from 'components'
+import { CartDropdown, CartBadge } from '@/components'
 
 export default function Cart() {
   return (

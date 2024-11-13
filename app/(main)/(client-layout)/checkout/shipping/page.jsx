@@ -81,7 +81,7 @@ const ShippingPage = () => {
       const { openAddressModal } = addressModalProps || {}
       return (
         <button type="button" onClick={openAddressModal} className="flex items-center ml-auto">
-          <span className="text-base text-sky-500">改变 | 编辑</span>
+          <span className="text-base text-sky-500">Edit</span>
           <Icons.ArrowRight2 className="icon text-sky-500" />
         </button>
       )
@@ -116,14 +116,14 @@ const ShippingPage = () => {
         <header className="lg:border lg:border-gray-200 lg:rounded-lg py-2">
           <div className="flex items-center justify-evenly">
             <Link href="/checkout/cart" className="flex flex-col items-center gap-y-2">
-              <Icons.Cart className="text-red-300 icon" />
-              <span className="font-normal text-red-300">购物车</span>
+              <Icons.Cart className="text-light-primary/40 icon" />
+              <span className="font-normal text-light-primary/40">Shopping Cart</span>
             </Link>
 
-            <div className="h-[1px] w-8  bg-red-300" />
+            <div className="h-[1px] w-8  bg-light-primary" />
             <div className="flex flex-col items-center gap-y-2">
-              <Icons.Wallet className="w-6 h-6 text-red-500 icon" />
-              <span className="text-base font-normal text-red-500">付款方式</span>
+              <Icons.Wallet className="w-6 h-6 text-light-primary icon" />
+              <span className="text-base font-normal text-light-primary">Confirm</span>
             </div>
           </div>
         </header>
@@ -136,7 +136,7 @@ const ShippingPage = () => {
             <section className="flex items-center px-3 py-4 lg:border lg:border-gray-200 lg:rounded-lg gap-x-3">
               <Icons.Location2 className="text-black w-7 h-7" />
               <div className="space-y-2">
-                <span className="">订单送货地址</span>
+                <span className="">Delivery Address</span>
                 <p className="text-base text-black">{userInfo?.address?.street}</p>
                 <span className="text-sm">{userInfo?.name}</span>
               </div>
@@ -149,12 +149,12 @@ const ShippingPage = () => {
             <section className="px-2 py-4 mx-3 border border-gray-200 rounded-lg lg:mx-0 lg:mt-3 ">
               <div className="flex mb-5">
                 <Image src="/icons/car.png" className="mr-4" width={40} height={40} alt="icon" />
-                <div>
+                {/* <div>
                   <span className="text-base text-black">正常发货</span>
                   <span className="block">有现货</span>
-                </div>
+                </div> */}
                 <span className="inline-block px-2 py-1 ml-3 bg-gray-100 rounded-lg h-fit">
-                  {formatNumber(totalItems)} 件商品
+                  {formatNumber(totalItems)} items
                 </span>
               </div>
               <div className="flex flex-wrap justify-start gap-x-8 gap-y-5">
@@ -183,7 +183,7 @@ const ShippingPage = () => {
               </div>
 
               <Link href="/checkout/cart" className="inline-block mt-6 text-sm text-sky-500">
-                返回购物车
+                Back to Shopping Cart
               </Link>
             </section>
           </div>
@@ -194,7 +194,7 @@ const ShippingPage = () => {
           <section className="lg:border lg:border-gray-200 lg:rounded-md lg:h-fit">
             <CartInfo />
             <div className="px-3 py-2 space-y-3">
-              <div className="flex items-center gap-x-2 ">
+              {/* <div className="flex items-center gap-x-2 ">
                 <input
                   type="radio"
                   name="cash"
@@ -206,8 +206,8 @@ const ShippingPage = () => {
                 <label className="text-sm" htmlFor="cash">
                   在线支付
                 </label>
-              </div>
-              <div className="flex items-center gap-x-2 ">
+              </div> */}
+              {/* <div className="flex items-center gap-x-2 ">
                 <input
                   type="radio"
                   name="zarinPal"
@@ -219,13 +219,13 @@ const ShippingPage = () => {
                 <label className="text-sm" htmlFor="zarinPal">
                   银行卡
                 </label>
-              </div>
+              </div> */}
               <Button
                 onClick={handleCreateOrder}
                 isLoading={isLoading}
-                className="w-full max-w-5xl mx-auto"
+                className="w-full max-w-5xl mx-auto bg-primary"
               >
-                完成购买
+                Submit
               </Button>
             </div>
           </section>

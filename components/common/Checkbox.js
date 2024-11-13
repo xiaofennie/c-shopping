@@ -20,7 +20,7 @@ const BaseCheckbox = (props, ref) => {
         <label
           htmlFor={name}
           className={`block h-6 overflow-hidden border-2 border-gray-400  rounded-full cursor-pointer ${
-            checked ? 'bg-blue-500 border-blue-500' : 'bg-white'
+            checked ? 'bg-light-primary border-light-primary' : 'bg-white'
           }`}
         ></label>
       </div>

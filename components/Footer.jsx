@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Icons, Services, LogoChina, ResponsiveImage } from 'components'
+import { Icons, Services, Logo, ResponsiveImage } from 'components'
 import { siteTitle } from '@/utils'
 import Link from 'next/link'
 
@@ -11,9 +11,9 @@ export default function Footer() {
         {/* Logo & scroll to top */}
         <div className="flex justify-between">
           <div>
-            <LogoChina className="w-32 h-10 mb-6" />
+            <Logo className="w-32 h-10 mb-6" />
             <div className="flex flex-col gap-y-2 lg:flex-row lg:space-x-5">
-              <span>我们每周 7 天、每天 24 小时为您解答</span>
+              <span>Welcome to Our Kirin! 👏</span>
               {/* <span className="hidden lg:block bg-gray-300 w-[2px]" />
               <span>我的微信：huanghanzhilian</span> */}
             </div>
@@ -24,7 +24,7 @@ export default function Footer() {
               onClick={() => window.scrollTo(0, 0)}
               className="flex items-center px-3 py-1 border border-gray-300 rounded-md"
             >
-              <span className="text-sm ">回到顶部</span>
+              <span className="text-sm ">Top</span>
               <Icons.ArrowUp className="text-gray-400 h-7 w-7" />
             </button>
           </div>
@@ -74,10 +74,11 @@ export default function Footer() {
         {/* info */}
         <div className="space-y-6 lg:flex lg:justify-between">
           <div className="space-y-3 lg:max-w-2xl">
-            <h5 className="font-semibold text-black">{siteTitle}在线商店，在线评价、选择和购买</h5>
+            <h5 className="font-semibold text-black">
+              Online store, Online selection, Online purchase
+            </h5>
             <p className="text-justify text-gray-700">
-              安全的网购需要店铺能够在短时间内为顾客提供多样、优质、价格合理的商品，并有退货保障；
-              {siteTitle}。在线商店多年来一直在努力开发的功能，并通过这种方式拥有了固定客户
+              Provide diverse, high-quality, and reasonably priced products
             </p>
           </div>
 

@@ -34,21 +34,21 @@ export default function ProfileAside() {
       Icon: Icons.Users,
       path: '/admin/users',
     },
-    {
-      name: '评价管理',
-      Icon: Icons.Comment,
-      path: '/admin/reviews',
-    },
+    // {
+    //   name: '评价管理',
+    //   Icon: Icons.Comment,
+    //   path: '/admin/reviews',
+    // },
     {
       name: '滑块管理',
       Icon: Icons.Slider,
       path: '/admin/sliders',
     },
-    {
-      name: 'banner管理',
-      Icon: Icons.Image,
-      path: '/admin/banners',
-    },
+    // {
+    //   name: 'banner管理',
+    //   Icon: Icons.Image,
+    //   path: '/admin/banners',
+    // },
   ]
 
   //? Render(s)

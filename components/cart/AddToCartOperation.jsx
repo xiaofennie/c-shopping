@@ -6,7 +6,7 @@ import { addToCart, showAlert } from 'store'
 
 import { existItem } from 'utils'
 
-import { ArrowLink, ProductPrice, CartButtons } from 'components'
+import { ArrowLink, ProductPrice, CartButtons } from '@/components'
 
 import { useAppDispatch, useAppSelector } from 'hooks'
 
@@ -57,19 +57,19 @@ const AddToCartOperation = props => {
 
   //? Render(s)
   return (
-    <div className="flex items-center justify-between p-3 bg-white border-t border-gray-300 sm:px-5 lg:py-3 lg:p-0 shadow-3xl lg:sticky lg:flex-col-reverse lg:top-32 lg:bg-gray-100 lg:gap-y-4 lg:border-t-0 lg:shadow-none">
+    <div className="flex items-center justify-between p-3 bg-white border-t border-gray-300 sm:px-5 lg:py-3 lg:p-0 shadow-3xl lg:sticky lg:flex-col-reverse lg:top-32 lg:gap-y-4 lg:border-t-0 lg:shadow-none">
       {currentItemInCart ? (
         <div className="flex w-full gap-x-4">
-          <div className="w-44 lg:w-1/2 ">
+          <div className="w-44 lg:w-full ">
             <CartButtons item={currentItemInCart} />
           </div>
-          <div className="hidden lg:block">
-            <ArrowLink path="/checkout/cart">查看购物车</ArrowLink>
-          </div>
+          {/* <div className="hidden lg:block">
+            <ArrowLink path="/checkout/cart">Go to Cart</ArrowLink>
+          </div> */}
         </div>
       ) : (
-        <button onClick={handleAddItem} className="px-12 text-sm lg:w-full btn">
-          添加到购物车
+        <button onClick={handleAddItem} className="px-12 text-sm lg:w-full btn bg-primary">
+          Add to Cart
         </button>
       )}
 

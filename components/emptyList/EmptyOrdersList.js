@@ -5,7 +5,7 @@ export default function EmptyOrdersList() {
     <div className="py-20">
       <OrderEmpty className="mx-auto h-52 w-52" />
 
-      <p className="text-center">列表为空</p>
+      <p className="text-center">List is empty</p>
     </div>
   )
 }

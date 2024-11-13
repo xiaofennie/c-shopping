@@ -1,7 +1,7 @@
 'use client'
 
 import { useTitle } from '@/hooks'
-import { Address, Icons, PageContainer, Skeleton, WithAddressModal } from 'components'
+import { Address, Icons, PageContainer, Skeleton, WithAddressModal } from '@/components'
 
 import { useUserInfo } from 'hooks'
 
@@ -15,32 +15,33 @@ const BasicAddresses = ({ addressModalProps }) => {
   //? Render(s)
   return (
     <main>
-      <PageContainer title="地址">
+      <PageContainer title="My Address">
         {isLoading ? (
-          <section className="flex-1 px-5 ">
-            <div className="flex justify-between py-4 border-b border-gray-200">
-              <Skeleton.Item animated="background" height="h-5" width="w-52" />
-            </div>
-            <div className="my-2 space-y-3 text-gray-500">
-              <div className="flex items-center gap-x-2 ">
-                <Icons.UserLocation className="text-gray-500 icon" />
-                <Skeleton.Item animated="background" height="h-5" width="w-40" />
-              </div>
-              <div className="flex items-center gap-x-2 ">
-                <Icons.Post className="text-gray-500 icon" />
-                <Skeleton.Item animated="background" height="h-5" width="w-40" />
-              </div>
-              <div className="flex items-center gap-x-2 ">
-                <Icons.Phone className="text-gray-500 icon" />
-                <Skeleton.Item animated="background" height="h-5" width="w-40" />
-              </div>
+          // <section className="flex-1 px-5 ">
+          //   <div className="flex justify-between py-4 border-b border-gray-200">
+          //     <Skeleton.Item animated="background" height="h-5" width="w-52" />
+          //   </div>
+          //   <div className="my-2 space-y-3 text-gray-500">
+          //     <div className="flex items-center gap-x-2 ">
+          //       <Icons.UserLocation className="text-gray-500 icon" />
+          //       <Skeleton.Item animated="background" height="h-5" width="w-40" />
+          //     </div>
+          //     <div className="flex items-center gap-x-2 ">
+          //       <Icons.Post className="text-gray-500 icon" />
+          //       <Skeleton.Item animated="background" height="h-5" width="w-40" />
+          //     </div>
+          //     <div className="flex items-center gap-x-2 ">
+          //       <Icons.Phone className="text-gray-500 icon" />
+          //       <Skeleton.Item animated="background" height="h-5" width="w-40" />
+          //     </div>
 
-              <div className="flex items-center gap-x-2 ">
-                <Icons.User className="text-gray-500 icon" />
-                <Skeleton.Item animated="background" height="h-5" width="w-40" />
-              </div>
-            </div>
-          </section>
+          //     <div className="flex items-center gap-x-2 ">
+          //       <Icons.User className="text-gray-500 icon" />
+          //       <Skeleton.Item animated="background" height="h-5" width="w-40" />
+          //     </div>
+          //   </div>
+          // </section>
+          <></>
         ) : isAddress ? (
           <section className="flex-1 px-5 ">
             <div className="flex justify-between py-4 border-b border-gray-200">
@@ -74,14 +75,14 @@ const BasicAddresses = ({ addressModalProps }) => {
           </section>
         ) : (
           <section className="flex flex-col items-center py-20 gap-y-4">
-            <Address className="h-52 w-52" />
-            <p>您尚未填写地址</p>
+            <Address className="h-50 w-50" />
+            <p>You have not filled in the address yet.</p>
             <button
-              className="flex items-center px-3 py-2 text-red-600 border-2 border-red-600 rounded-lg gap-x-3"
+              className="flex items-center px-3 py-2 border-2 border-primary rounded-lg gap-x-3"
               onClick={openAddressModal}
             >
-              <Icons.Location className="text-red-600 icon" />
-              <span>地址登记</span>
+              <Icons.Location className="text-primary icon" />
+              <span className='text-gray-600'>Add New Address</span>
             </button>
           </section>
         )}

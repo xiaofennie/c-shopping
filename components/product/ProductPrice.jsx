@@ -1,4 +1,4 @@
-import { formatNumber } from 'utils'
+import { formatNumber } from '@/utils'
 
 import { DiscountProduct } from 'components'
 
@@ -8,7 +8,7 @@ const ProductPrice = props => {
 
   //? Render(s)
   return (
-    <div className={`${(singleProduct && 'flex flex-col-reverse') || ''}`}>
+    <div className={`${(singleProduct && 'flex flex-col-reverse') || ''} mr-2`}>
       <div className={`flex items-center ${(singleProduct && 'self-end') || ''}`}>
         <span className="text-sm text-gray-700">
           {formatNumber(price - (discount * price) / 100)}

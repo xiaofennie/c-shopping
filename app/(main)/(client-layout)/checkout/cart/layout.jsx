@@ -1,7 +1,7 @@
 import { siteTitle } from '@/utils'
 
 export const metadata = {
-  title: `购物车-${siteTitle}`,
+  title: `Shopping Cart-${siteTitle}`,
 }
 
 export default function Layout({ children }) {

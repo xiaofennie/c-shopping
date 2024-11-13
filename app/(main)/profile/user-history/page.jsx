@@ -17,7 +17,7 @@ const UserHistory = () => {
   //? selector
   return (
     <main>
-      <PageContainer title="最近访问">
+      <PageContainer title="Recently visited">
         {lastSeen.length > 0 ? (
           <div className="px-3 space-y-4 md:py-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-2 lg:grid-cols-3 md:gap-y-3">
             {lastSeen.map(item => (
@@ -46,7 +46,7 @@ const UserHistory = () => {
         ) : (
           <section className="py-20">
             <EmptyCart className="mx-auto h-52 w-52" />
-            <p className="text-center">您的最近访问列表为空</p>
+            <p className="text-center">List is empty</p>
           </section>
         )}
       </PageContainer>
