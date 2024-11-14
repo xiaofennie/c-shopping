@@ -1,9 +1,9 @@
-FROM node:18-alpine as dependencies
+FROM registry.us-east-1.aliyuncs.com/oll/node:18-alpine as dependencies
 WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm install
 
-FROM node:18-alpine as builder
+FROM registry.us-east-1.aliyuncs.com/oll/node:18-alpine as builder
 WORKDIR /app
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY ./ ./
@@ -11,7 +11,7 @@ COPY ./.env ./
 
 RUN npm run build
 
-FROM node:18-alpine as runner
+FROM registry.us-east-1.aliyuncs.com/oll/node:18-alpine as runner
 WORKDIR /app
 ENV NODE_ENV production
 
