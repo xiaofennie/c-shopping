@@ -82,7 +82,7 @@ const BasicAddresses = ({ addressModalProps }) => {
               onClick={openAddressModal}
             >
               <Icons.Location className="text-primary icon" />
-              <span className='text-gray-600'>Add New Address</span>
+              <span className="text-gray-600">Add New Address</span>
             </button>
           </section>
         )}

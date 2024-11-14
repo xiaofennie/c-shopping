@@ -111,7 +111,10 @@ const AddressModal = props => {
             >
               <div className="space-y-12 md:grid md:grid-cols-3 md:gap-x-12 md:gap-y-5 md:items-baseline ">
                 <div className="space-y-2">
-                  <div className="block text-xs text-gray-700 lg:text-sm md:min-w-max mb-3" htmlFor={name}>
+                  <div
+                    className="block text-xs text-gray-700 lg:text-sm md:min-w-max mb-3"
+                    htmlFor={name}
+                  >
                     State
                   </div>
                   <Combobox
@@ -132,13 +135,8 @@ const AddressModal = props => {
                   />
                   <DisplayError errors={formErrors.city?.name} />
                 </div> */}
-                <TextField
-                  label="City"
-                  control={control}
-                  errors={formErrors.city}
-                  name="city"
-                />
-{/* 
+                <TextField label="City" control={control} errors={formErrors.city} name="city" />
+                {/* 
                 <div className="space-y-2 ">
                   <Combobox
                     control={control}
@@ -151,11 +149,7 @@ const AddressModal = props => {
 
                 <TextField label="Street" control={control} errors={formErrors.area} name="area" />
 
-                <TextField
-                  label="Street"
-                  control={control}
-                  name="street"
-                />
+                <TextField label="Street" control={control} name="street" />
 
                 <TextField
                   label="Postal Code"

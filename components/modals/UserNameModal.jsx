@@ -55,15 +55,12 @@ const UserNameModal = props => {
               className="flex flex-col justify-between flex-1 gap-y-5 "
               onSubmit={handleSubmit(submitHander)}
             >
-              <TextField
-                label="Name"
-                control={control}
-                errors={formErrors.name}
-                name="name"
-              />
+              <TextField label="Name" control={control} errors={formErrors.name} name="name" />
 
               <div className="py-3 border-t-2 border-gray-200 lg:pb-0 flex">
-                <SubmitModalBtn isLoading={isLoading} className="ml-auto bg-primary">Submit</SubmitModalBtn>
+                <SubmitModalBtn isLoading={isLoading} className="ml-auto bg-primary">
+                  Submit
+                </SubmitModalBtn>
               </div>
             </form>
           </Modal.Body>

@@ -72,13 +72,17 @@ export default function CartDropdown() {
                     </div>
                   </div>
 
-                  <Button className="bg-primary" onClick={handleRoute}>Continue</Button>
+                  <Button className="bg-primary" onClick={handleRoute}>
+                    Continue
+                  </Button>
                 </div>
               </>
             ) : (
               <>
                 <EmptyCart className="mx-auto h-44 w-44" />
-                <p className="py-2 text-base font-bold text-gray-600 text-center">Your shopping cart is empty</p>
+                <p className="py-2 text-base font-bold text-gray-600 text-center">
+                  Your shopping cart is empty
+                </p>
               </>
             )}
           </Menu.Items>

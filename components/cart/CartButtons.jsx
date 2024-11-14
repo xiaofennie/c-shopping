@@ -16,7 +16,10 @@ const CartButtons = props => {
   return (
     <div className="flex items-center py-2 text-sm rounded-md shadow-3xl justify-evenly">
       <button className="active:scale-90" type="button">
-        <Icons.Plus onClick={() => dispatch(increase(item.itemID))} className="text-light-primary icon" />
+        <Icons.Plus
+          onClick={() => dispatch(increase(item.itemID))}
+          className="text-light-primary icon"
+        />
       </button>
 
       <span className="text-sm min-w-[22px] text-center">{formatNumber(item.quantity)}</span>

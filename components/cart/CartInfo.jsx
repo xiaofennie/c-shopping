@@ -25,7 +25,7 @@ const CartInfo = props => {
 
       {/* total cart items */}
       <div className="flex justify-between">
-        <span className='font-bold'>Total</span>
+        <span className="font-bold">Total</span>
         <div className="flex-center">
           <span className="font-bold">{formatNumber(totalPrice - totalDiscount)}</span>
           <span className="ml-1 font-bold">¥</span>
@@ -41,7 +41,7 @@ const CartInfo = props => {
         <span className="text-red-500 font-bold">Saved amount</span>
         <div className="flex-center gap-x-1">
           <span className="text-red-500 font-bold">
-          ({totalPrice ? ((totalDiscount / totalPrice) * 100).toFixed(1) : 0}%)
+            ({totalPrice ? ((totalDiscount / totalPrice) * 100).toFixed(1) : 0}%)
           </span>
           <span className="text-red-500 font-bold">{formatNumber(totalDiscount)}</span>
           <span className="ml-1 text-red-500 font-bold">¥</span>

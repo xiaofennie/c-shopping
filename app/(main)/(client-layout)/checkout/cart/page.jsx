@@ -77,7 +77,9 @@ const CartPage = () => {
 
           <div className="py-20">
             <EmptyCart className="mx-auto h-52 w-52" />
-            <p className="text-base font-bold text-center text-gray-700">Your shopping cart is empty </p>
+            <p className="text-base font-bold text-center text-gray-700">
+              Your shopping cart is empty{' '}
+            </p>
           </div>
         </section>
       </>
