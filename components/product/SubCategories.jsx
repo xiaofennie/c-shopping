@@ -14,21 +14,23 @@ const SubCategories = props => {
         <></>
       ) : childCategories && childCategories.length > 0 ? (
         <>
-          <h4 className="mb-4 text-base text-black lg:pt-4">Categories</h4>
+          <h4 className="mb-4 text-xl font-bold text-gray-800 lg:pt-4">Categories</h4>
           <div className="flex gap-3 pb-3 overflow-x-auto">
             {childCategories.map(item => (
               <Link
                 key={item._id}
                 href={`/products?category=${item.slug}`}
-                className="px-3 pt-4 pb-2 text-center border-4 border-gray-100 rounded-md"
+                className="text-center border-2 border-gray-100 rounded-xl relative"
               >
                 <ResponsiveImage
-                  dimensions="w-24 h-24 md:h-32 md:w-32 xl:w-40 xl:h-40"
+                  dimensions="w-24 h-24 md:h-32 md:w-32 xl:w-36 xl:h-36"
                   src={item.image}
                   alt={item.name}
                 />
 
-                <span className="inline-block mt-2">{item.name}</span>
+                <div className="text-sm lg:text-base font-bold absolute bottom-0 w-full bg-gray-100 py-3 text-gray-700">
+                  {item.name}
+                </div>
               </Link>
             ))}
           </div>

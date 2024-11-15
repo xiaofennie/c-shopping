@@ -1,8 +1,10 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useDispatch } from 'react-redux'
+import { showAlert } from 'store'
 
-import { HandleResponse, PageContainer, ProductsForm } from 'components'
+import { HandleResponse, PageContainer, ProductsForm } from '@/components'
 
 import { useCreateProductMutation } from '@/store/services'
 import { useTitle } from '@/hooks'
@@ -19,7 +21,16 @@ const CreateProductPage = () => {
   //? Handlers
   const createHandler = data => {
     console.log(data)
-    createProduct({ body: data })
+    if (data.images.length) {
+      createProduct({ body: data })
+    } else {
+      dispatch(
+        showAlert({
+          status: 'warning',
+          title: '请上传图片',
+        })
+      )
+    }
   }
 
   const onSuccess = () => {

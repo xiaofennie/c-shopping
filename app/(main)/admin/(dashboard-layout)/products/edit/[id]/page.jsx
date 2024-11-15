@@ -13,12 +13,16 @@ import {
 
 import { useDisclosure } from 'hooks'
 
+import { useDispatch } from 'react-redux'
+import { showAlert } from 'store'
+
 import { SubmitHandler } from 'react-hook-form'
 
 import { useGetSingleProductQuery, useUpdateProductMutation } from '@/store/services'
 import { useTitle } from '@/hooks'
 
 const EditProductPage = ({ params: { id } }) => {
+  const dispatch = useDispatch()
   useTitle('编辑商品')
   //? Assets
   const { back } = useRouter()
@@ -50,8 +54,18 @@ const EditProductPage = ({ params: { id } }) => {
 
   //? Handlers
   const updateHandler = data => {
-    setUpdateInfo(prev => ({ ...prev, ...selectedProduct.data, ...data }))
-    confirmUpdateModalHandlers.open()
+    console.log(data)
+    if (data.images.length) {
+      setUpdateInfo(prev => ({ ...prev, ...selectedProduct.data, ...data }))
+      confirmUpdateModalHandlers.open()
+    } else {
+      dispatch(
+        showAlert({
+          status: 'warning',
+          title: '请上传图片',
+        })
+      )
+    }
   }
 
   const onConfirmUpdate = () => {

@@ -26,20 +26,20 @@ export default function Pagination(props) {
         <div className="ml-auto">
           {hasPreviousPage && (
             <li
-              className="flex items-center p-1 text-red-500 cursor-pointer"
+              className="flex items-center p-1 text-primary cursor-pointer"
               onClick={() => {
                 changeRoute({ page: previousPage })
                 scrollToTop()
               }}
             >
-              <Icons.ArrowLeft className="text-red-500 icon" />
-              previous page
+              <Icons.ArrowLeft className="text-primary icon" />
+              Previous
             </li>
           )}
         </div>
         {currentPage !== 1 && previousPage !== 1 && (
           <li
-            className="w-8 h-8 p-1 text-center transition-colors border-2 border-transparent cursor-pointer hover:text-red-500 hover:border-red-500 rounded-2xl"
+            className="w-8 h-8 p-1 text-center transition-colors border-2 border-transparent cursor-pointer hover:text-primary hover:border-primary rounded-2xl"
             onClick={() => {
               changeRoute({ page: 1 })
               scrollToTop()
@@ -52,7 +52,7 @@ export default function Pagination(props) {
 
         {hasPreviousPage && (
           <li
-            className="w-8 h-8 p-1 text-center transition-colors border-2 border-transparent cursor-pointer hover:text-red-500 hover:border-red-500 rounded-2xl"
+            className="w-8 h-8 p-1 text-center transition-colors border-2 border-transparent cursor-pointer hover:text-primary hover:border-primary rounded-2xl"
             onClick={() => {
               changeRoute({ page: previousPage })
               scrollToTop()
@@ -62,7 +62,7 @@ export default function Pagination(props) {
           </li>
         )}
         <li
-          className="cursor-pointer w-8 h-8 p-1.5 text-center bg-red-500 text-white rounded-2xl"
+          className="cursor-pointer w-8 h-8 p-1.5 text-center bg-primary text-white rounded-2xl"
           onClick={() => {
             changeRoute({ page: currentPage })
             scrollToTop()
@@ -72,7 +72,7 @@ export default function Pagination(props) {
         </li>
         {hasNextPage && (
           <li
-            className="w-8 h-8 p-1 text-center transition-colors border-2 border-transparent cursor-pointer hover:text-red-500 hover:border-red-500 rounded-2xl"
+            className="w-8 h-8 p-1 text-center transition-colors border-2 border-transparent cursor-pointer hover:text-primary hover:border-primary rounded-2xl"
             onClick={() => {
               changeRoute({ page: nextPage })
               scrollToTop()
@@ -84,7 +84,7 @@ export default function Pagination(props) {
         {hasNextPage && nextPage !== lastPage && <li>...</li>}
         {lastPage !== currentPage && lastPage !== nextPage && (
           <li
-            className="w-8 h-8 p-1 text-center transition-colors border-2 border-transparent cursor-pointer hover:text-red-500 hover:border-red-500 rounded-2xl"
+            className="w-8 h-8 p-1 text-center transition-colors border-2 border-transparent cursor-pointer hover:text-primary hover:border-primary rounded-2xl"
             onClick={() => {
               changeRoute({ page: lastPage })
               scrollToTop()
@@ -96,14 +96,14 @@ export default function Pagination(props) {
         <div className="mr-auto">
           {hasNextPage && (
             <li
-              className="flex items-center p-1 text-red-500 cursor-pointer"
+              className="flex items-center p-1 text-primary cursor-pointer"
               onClick={() => {
                 changeRoute({ page: nextPage })
                 scrollToTop()
               }}
             >
-              next page
-              <Icons.ArrowRight2 className="text-red-500 icon" />
+              Next
+              <Icons.ArrowRight2 className="text-primary icon" />
             </li>
           )}
         </div>

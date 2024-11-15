@@ -7,7 +7,7 @@ const Breadcrumb = ({ categoryLevels }) => {
   return (
     <div className=" pl-3">
       <Link href="/" className="inline-block px-1 py-1 text-sm text-gray-700 ">
-        首页
+        Home
       </Link>
       {' / '}
       <Link

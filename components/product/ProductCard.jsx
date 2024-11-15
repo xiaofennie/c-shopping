@@ -24,12 +24,13 @@ const ProductCard = props => {
         <div className="flex items-center gap-4 sm:flex-col sm:space-x-4">
           <div className="sm:flex sm:p-1 ">
             <ResponsiveImage
-              dimensions="h-[30vw] w-[30vw] sm:w-56 sm:h-60 sm:mb-8 xl:w-44 xl:h-48"
+              dimensions="h-[30vw] w-[30vw] sm:w-60 sm:h-60 sm:mb-8 xl:w-52 xl:h-52"
+              imageStyles="w-full h-full"
               src={product.images[0].url}
               alt={product.title}
             />
 
-            <div className="p-2 flex gap-1.5 items-center sm:flex-col sm:items-end">
+            {/* <div className="p-2 flex gap-1.5 items-center sm:flex-col sm:items-end">
               {product.colors &&
                 product.inStock !== 0 &&
                 product.colors
@@ -44,7 +45,7 @@ const ProductCard = props => {
               {product.colors.length > 3 && product.inStock !== 0 && (
                 <Icons.Plus className="w-3 h-3 mr-1 sm:mr-0" />
               )}
-            </div>
+            </div> */}
           </div>
           <div className="flex-1 space-y-5 sm:w-full">
             <h2 className="hidden text-xs leading-6 text-gray-800 break-all h-14 xl:block">

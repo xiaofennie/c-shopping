@@ -52,7 +52,7 @@ const ShippingPage = () => {
       return dispatch(
         showAlert({
           status: 'error',
-          title: '请填写您的地址',
+          title: 'Please fill in your address',
         })
       )
     else
