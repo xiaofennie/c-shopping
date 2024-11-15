@@ -4,6 +4,7 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
+    domains: ['kylinfloor.s3.amazonaws.com'],
     remotePatterns: [
       {
         protocol: 'http',
@@ -14,6 +15,18 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: '**.aliyuncs.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**.amazonaws.com',
         port: '',
         pathname: '/**',
       },

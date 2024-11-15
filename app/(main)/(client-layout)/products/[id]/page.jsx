@@ -128,7 +128,7 @@ export async function generateMetadata({ params }) {
   const { product, smilarProducts } = await getData(params)
 
   return {
-    title: `购买 ${product.title}`,
+    title: `${product.title}`,
     description: `${product.title}`,
   }
 }

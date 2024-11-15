@@ -1,6 +1,6 @@
 'use client'
 
-import OSS from 'ali-oss'
+import AWS from 'aws-sdk'
 import { useLazyGetUploadTokenQuery } from '@/store/services'
 import { nanoid } from '@reduxjs/toolkit'
 import { useState } from 'react'
@@ -45,30 +45,57 @@ const UploadImage = props => {
     // const credentials = await getUploadToken().unwrap()
 
     // const { AccessKeyId, AccessKeySecret, SecurityToken } = credentials.data
-    const ossClient = new OSS({
-      accessKeyId: process.env.NEXT_PUBLIC_ALI_ACCESS_KEY,
-      accessKeySecret: process.env.NEXT_PUBLIC_ALI_SECRET_KEY,
-      bucket: process.env.NEXT_PUBLIC_ALI_BUCKET_NAME,
-      region: process.env.NEXT_PUBLIC_ALI_REGION,
+    AWS.config.update({
+      accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY,
+      secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_KEY,
+      region: process.env.NEXT_PUBLIC_AWS_REGION,
     })
+
+    const s3 = new AWS.S3()
+
+    // const ossClient = new OSS({
+    //   accessKeyId: process.env.NEXT_PUBLIC_ALI_ACCESS_KEY,
+    //   accessKeySecret: process.env.NEXT_PUBLIC_ALI_SECRET_KEY,
+    //   bucket: process.env.NEXT_PUBLIC_ALI_BUCKET_NAME,
+    //   region: process.env.NEXT_PUBLIC_ALI_REGION,
+    // })
 
     const filePath = `${process.env.NEXT_PUBLIC_ALI_FILES_PATH}${folder || '/others'}/`
     const fileName = `${nanoid()}.${getFilenameExt(file.name)}`
     console.log(`${filePath}${fileName}`, file)
 
-    ossClient
-      .put(`${filePath}${fileName}`, file)
-      .then(result => {
-        handleAddUploadedImageUrl(result.url)
-        setMessage('上传成功')
-      })
-      .catch(err => {
-        console.log(`Common upload failed`, err)
+    const params = {
+      Bucket: process.env.NEXT_PUBLIC_AWS_BUCKET_NAME,
+      Key: `${filePath}${fileName}`,
+      Body: file,
+    }
+
+    s3.upload(params, function (err, data) {
+      if (err) {
+        console.log('上传失败：', err)
         setError(err.message || '未上载图像')
-      })
-      .finally(() => {
         setLoading(false)
-      })
+      } else {
+        console.log('上传成功：', data.Location)
+        handleAddUploadedImageUrl(data.Location)
+        setMessage('上传成功')
+        setLoading(false)
+      }
+    })
+
+    // ossClient
+    //   .put(`${filePath}${fileName}`, file)
+    //   .then(result => {
+    //     handleAddUploadedImageUrl(result.url)
+    //     setMessage('上传成功')
+    //   })
+    //   .catch(err => {
+    //     console.log(`Common upload failed`, err)
+    //     setError(err.message || '未上载图像')
+    //   })
+    //   .finally(() => {
+    //     setLoading(false)
+    //   })
   }
 
   return (

@@ -1,7 +1,7 @@
 import { siteTitle } from '@/utils'
 
 export const metadata = {
-  title: `分类 ${siteTitle}`,
+  title: `Category-${siteTitle}`,
 }
 
 export default function Layout({ children }) {

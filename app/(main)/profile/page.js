@@ -6,7 +6,7 @@ import { siteTitle } from '@/utils'
 import { useSelector } from 'react-redux'
 
 export default function ProfilePage() {
-  useTitle(`${siteTitle}-User Center`)
+  useTitle(`User Center-${siteTitle}`)
   const { user } = useSelector(state => state.user)
 
   return (
