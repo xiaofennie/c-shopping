@@ -19,7 +19,8 @@ services:
 
   db:
     container_name: db
-    image: registry.us-east-1.aliyuncs.com/oll/mongo:5.0.18
+    # image: registry.us-east-1.aliyuncs.com/oll/mongo:5.0.18
+    image: mongo:5.0.18,
     restart: always
     volumes:
       - ./data/db:/data/db
